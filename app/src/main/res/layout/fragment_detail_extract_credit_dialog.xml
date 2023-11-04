@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutmainbody"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/lnlmainbody"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lnltitle"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="#018843"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/icon_detail" />
+
+            <TextView
+                android:id="@+id/title_dialog_extract"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Detalle de extracto"
+                android:textColor="#FFF" />
+
+            <TextView
+                android:id="@+id/titlecred"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="CREDITO"
+                android:textColor="#FFF" />
+
+            <TextView
+                android:id="@+id/titlemoneda"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="bs."
+                android:textColor="#FFF" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/lnlbodyinformation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#BDBDBD"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lnltitllelabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/lblfecha"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Fecha de pago"
+                            android:textColor="#fff"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/lblnrotransc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="N°.Transacción"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lnlheader"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtFechaP"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Fecha:"
+                            android:textAlignment="center"
+                            android:textColor="#000"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtNro"
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Nro.Trans:"
+                            android:textAlignment="center"
+                            android:textColor="#000"
+                            android:textSize="19dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lnlmonto"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#FFF"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lblMontoCapi"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Pagado a Capital: "
+                        android:textAlignment="textEnd"
+                        android:textColor="#158553"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtMontoCapi"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:textAlignment="textStart"
+                        android:textColor="#000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lnlInteres"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#fff"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lblMontoInteres"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Pagado a Interes: "
+                        android:textAlignment="textEnd"
+                        android:textColor="#158553"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtMontoInteres"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:textAlignment="textStart"
+                        android:textColor="#000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lnlPenal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#fff"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lblTotalCuota"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Cargos Penales: "
+                        android:textAlignment="textEnd"
+                        android:textColor="#158553"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtTotalCuota"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:textAlignment="textStart"
+                        android:textColor="#000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lnlMontoCargos"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#fff"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lblMontoCargos"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Cargos Generales: "
+                        android:textAlignment="textEnd"
+                        android:textColor="#158553"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtMontoCargos"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:textAlignment="textStart"
+                        android:textColor="#000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lnlTotalPago"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#FFF"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lbltotalpagos"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Total Cuota Pagada:"
+                        android:textAlignment="textEnd"
+                        android:textColor="#158553"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtTotalpago"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:textAlignment="textStart"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lnlSaldoCapital"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#FFF"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lblSaldoCredi"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Saldo Capital: "
+                        android:textAlignment="textEnd"
+                        android:textColor="#158553"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtSaldoCredi"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:textAlignment="textStart"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutfooter"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFF">
+
+                    <Button
+                        android:id="@+id/btnCloseDialog"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:background="#00A850"
+                        android:text="Cerrar"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

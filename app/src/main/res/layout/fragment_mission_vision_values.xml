@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.ui.home.InfoFragment"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/infoTvTitleMission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/info_title_mission"
+            android:textSize="18sp"
+            android:textColor="@color/green_kelp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/mision_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toBottomOf="@id/infoTvTitleMission" >
+
+                <ImageView
+                    android:id="@+id/infoIVMission"
+                    android:layout_width="90sp"
+                    android:layout_height="90sp"
+                    android:src="@drawable/mission_icon"
+                    app:layout_constraintStart_toStartOf="parent" />
+                <TextView
+                    android:id="@+id/infoTVContentMission"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:text="@string/info_content_mission"
+                    android:padding="8sp"
+                    app:layout_constraintStart_toEndOf="@+id/infoIVMission"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/infoTVTitleVision"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/info_title_vision"
+            android:textSize="18sp"
+            android:textColor="@color/green_kelp"
+            android:textStyle="bold"
+            android:layout_marginTop="15sp"
+            app:layout_constraintTop_toBottomOf="@+id/mision_layout" />
+
+        <LinearLayout
+            android:id="@+id/info_vision_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/infoTVTitleVision">
+                <ImageView
+                    android:id="@+id/icon_vision"
+                    android:layout_width="90sp"
+                    android:layout_height="90sp"
+                    android:src="@drawable/vision_icon" />
+                <TextView
+                    android:id="@+id/infoTVContentVision"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8sp"
+                    android:justificationMode="inter_word"
+                    android:text="@string/info_content_vision"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/infoTVTitleValues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/info_title_values"
+            android:textSize="18sp"
+            android:textColor="@color/green_kelp"
+            android:textStyle="bold"
+            android:layout_marginTop="15sp"
+            app:layout_constraintTop_toBottomOf="@+id/info_vision_layout"/>
+        <LinearLayout
+            android:id="@+id/info_values_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/infoTVTitleValues">
+                <ImageView
+                    android:id="@+id/icon_values"
+                    android:layout_width="90sp"
+                    android:layout_height="90sp"
+                    android:src="@drawable/values_icon" />
+                <TextView
+                    android:id="@+id/infoTVContentValues"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8sp"
+                    android:justificationMode="inter_word"
+                    android:text="@string/info_content_values"
+                    app:layout_constraintTop_toBottomOf="@+id/infoTVTitleValues"/>
+        </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

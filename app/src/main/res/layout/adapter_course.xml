@@ -1,0 +1,280 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardView="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/carView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    cardView:cardCornerRadius="8dp"
+    android:background="@color/background_card"
+    cardView:cardElevation="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_card"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/photo_course"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            cardView:layout_constraintEnd_toEndOf="parent"
+            cardView:layout_constraintHorizontal_bias="1.0"
+            cardView:layout_constraintStart_toStartOf="parent"
+            cardView:layout_constraintTop_toTopOf="parent"
+            cardView:srcCompat="@drawable/img_curso" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            cardView:layout_constraintTop_toBottomOf="@+id/photo_course">
+
+            <TextView
+                android:id="@+id/text_name_c"
+                style="@style/title_light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="2dp"
+                android:text="@string/text_name_c"
+                android:textColor="#4EA351"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="376dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/desc_fecha"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/fecha_inicio"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_date_s"
+                    android:layout_width="299dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/date_s"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="376dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView47"
+                    android:layout_width="216dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Fecha Fin:"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_date_e"
+                    android:layout_width="299dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/date_e"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="376dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView48"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Expositor"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_expositor"
+                    android:layout_width="300dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/expositores"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cont_horario"
+                android:layout_width="377dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="77dp"
+                    android:layout_height="wrap_content"
+                    android:text="Horario:"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_horario"
+                    android:layout_width="293dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/text_horario"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView56"
+                    android:layout_width="77dp"
+                    android:layout_height="match_parent"
+                    android:text="Modalidad:"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_type"
+                    android:layout_width="110dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/type"
+                    android:textColor="#A30B3E"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cont_location"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="77dp"
+                    android:layout_height="match_parent"
+                    android:text="Lugar:"
+                    android:textColor="#0B0A0A"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_locate"
+                    android:layout_width="302dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/locate"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cont_url"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/desc_url"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="URL:"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_url"
+                    android:layout_width="305dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/url"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cont_code"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/desc_code"
+                    android:layout_width="68dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Código:"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_code"
+                    android:layout_width="307dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/code"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cont_password"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/desc_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Password:"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_password"
+                    android:layout_width="306dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/password"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/pdf_curso"
+                android:layout_width="93dp"
+                android:layout_height="38dp"
+                android:text="PDF Curso"
+                android:textSize="9sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

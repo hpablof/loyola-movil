@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detail_credit_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BCBCBC">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header_background"
+        android:layout_width="410dp"
+        android:layout_height="194dp"
+        android:background="#00A850"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header"
+            android:layout_width="380dp"
+            android:layout_height="175dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:background="#029648">
+
+            <TextView
+                android:id="@+id/crednumber"
+                android:layout_width="230dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:text="Numero"
+                android:textAlignment="center"
+                android:textColor="#020202"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.51"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/crediEstado"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="53dp"
+                android:layout_marginBottom="32dp"
+                android:text="Estado"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txttitleestado" />
+
+            <TextView
+                android:id="@+id/txttitleestado"
+                android:layout_width="230dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:text="ESTADO CREDITO:"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/crednumber" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/body"
+            android:layout_width="380dp"
+            android:layout_height="350dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#EEEEEE">
+
+            <TextView
+                android:id="@+id/txtMoneda"
+                android:layout_width="120dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="110dp"
+                android:text="Moneda:"
+                android:textColor="#09824C"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/crediMoneda"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMonto" />
+
+            <TextView
+                android:id="@+id/txtMonto"
+                android:layout_width="120dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="110dp"
+                android:text="Monto:"
+                android:textColor="#09824C"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/credMontoDesem"
+                app:layout_constraintHorizontal_bias="0.625"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/crediMoneda"
+                android:layout_width="130dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="5dp"
+                android:text="Moneda"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/credMontoDesem" />
+
+            <TextView
+                android:id="@+id/crediSaldo"
+                android:layout_width="130dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="5dp"
+                android:text="Saldo"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/crediMoneda" />
+
+            <TextView
+                android:id="@+id/credFecDesem"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="5dp"
+                android:text="FechaD"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/crediSaldo" />
+
+            <TextView
+                android:id="@+id/crediFecCancel"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="5dp"
+                android:text="FechaC"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/credFecDesem" />
+
+            <TextView
+                android:id="@+id/credMontoDesem"
+                android:layout_width="130dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:text="Monto"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtSaldo"
+                android:layout_width="120dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="110dp"
+                android:text="Saldo Restante:"
+                android:textColor="#09824C"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/crediSaldo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMoneda" />
+
+            <TextView
+                android:id="@+id/txtFechaD"
+                android:layout_width="165dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="65dp"
+                android:text="Fecha de Desembolso:"
+                android:textColor="#09824C"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/credFecDesem"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtSaldo" />
+
+            <TextView
+                android:id="@+id/txtFechaC"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="65dp"
+                android:text="Fecha de Cancelación:"
+                android:textColor="#09824C"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/crediFecCancel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtFechaD" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btntocreditplanepay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Plan de pagos" />
+
+            <Button
+                android:id="@+id/btntocreditextract"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Extracto de creditos" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

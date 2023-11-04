@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="app.wiserkronox.loyolasocios.view.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_data"
+        android:name="app.wiserkronox.loyolasocios.view.ui.home.ViewDataFragment"
+        android:label="@string/menu_datos"
+        tools:layout="@layout/fragment_view_data" />
+
+    <fragment
+        android:id="@+id/nav_pictures"
+        android:name="app.wiserkronox.loyolasocios.view.ui.home.ViewPicturesFragment"
+        android:label="@string/menu_pictures"
+        tools:layout="@layout/fragment_view_pictures" />
+
+    <fragment
+        android:id="@+id/nav_assembly"
+        android:name="app.wiserkronox.loyolasocios.view.ui.home.ListAssemblyFragment"
+        android:label="@string/menu_assembly"
+        tools:layout="@layout/fragment_list_assembly" />
+    <fragment
+        android:id="@+id/nav_info"
+        android:name="app.wiserkronox.loyolasocios.view.ui.home.InfoFragment"
+        android:label="@string/menu_more_info"
+        tools:layout="@layout/fragment_info"
+        />
+
+    <fragment
+        android:id="@+id/nav_certificate"
+        android:name="app.wiserkronox.loyolasocios.view.ui.home.CertificateFragment"
+        android:label="Certificados de Aportación"
+        tools:layout="@layout/fragment_certificate" />
+    <fragment
+        android:id="@+id/nav_credit"
+        android:name="app.wiserkronox.loyolasocios.view.ui.home.CreditFragment"
+        android:label="Creditos"
+        tools:layout="@layout/fragment_credit" >
+
+        <action
+            android:id="@+id/action_detaill"
+            app:destination="@+id/nav_credit_detaill">
+        </action>
+        <action
+            android:id="@+id/action_plane_pay_credit"
+            app:destination="@id/nav_plane_pay_credit">
+        </action>
+        <action
+            android:id="@+id/action_extract_credit"
+            app:destination="@id/nav_extract_credito" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_credit_detaill"
+        android:name="app.wiserkronox.loyolasocios.view.ui.home.DetailCreditFragment"
+        android:label="Detalles de credito"
+        tools:layout="@layout/fragment_detail_credit"
+        >
+
+        <action
+            android:id="@+id/action_plane_pay_credit"
+            app:destination="@id/nav_plane_pay_credit">
+        </action>
+        <action
+            android:id="@+id/action_extract_credit"
+            app:destination="@id/nav_extract_credito">
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_plane_pay_credit"
+        android:name="app.wiserkronox.loyolasocios.view.ui.home.PlanePayCreditFragment"
+        android:label="Plan de Pagos Crediticio"
+        tools:layout="@layout/fragment_plane_pay_credit"
+        >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_extract_credito"
+        android:name="app.wiserkronox.loyolasocios.view.ui.home.ExtractCreditFragment"
+        android:label="Extracto de credito"
+        tools:layout="@layout/fragment_extract_credit">
+    </fragment>
+    <fragment
+        android:id="@+id/nav_course"
+        android:name="app.wiserkronox.loyolasocios.view.ui.home.ListCourseFragment"
+        android:label="Cursos"
+        tools:layout="@layout/fragment_list_course" />
+
+    <fragment
+        android:id="@+id/nav_map"
+        android:name="app.wiserkronox.loyolasocios.view.ui.home.MapFragment"
+        android:label="Sucursales"
+        tools:layout="@layout/fragment_map" />
+</navigation>

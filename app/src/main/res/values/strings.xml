@@ -1,0 +1,198 @@
+<resources>
+    <string name="app_name">Socio Loyola</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <!-- Textos del fragmento inicio de sesion -->
+    <string name="btn_singin_google">Iniciar con Google</string>
+    <string name="text_singin_options">Si estas registrado ingresa tu correo y clave</string>
+    <string name="hint_email">Correo Electrónico</string>
+    <string name="hint_password">Clave</string>
+    <string name="btn_login">Ingresar</string>
+    <string name="text_register">¿Todavia no tienes una cuenta?\n Registrate aquí</string>
+    <string name="btn_register">Registrar</string>
+    <string name="text_footer">Esta entidad esta supervisada por: </string>
+    <string name="content_logo_footer">Logotipo ASFI</string>
+    <string name="content_logo_loyola">Logotipo Cooperativa Loyola</string>
+    <string name="text_recovery_password">Recuperar contraseña</string>
+
+    <!-- Textos del fragmento Recuperar contraseña -->
+    <string name="btn_recovery">Recuperar</string>
+    <string name="btn_back">Volver</string>
+    <string name="text_email_recovery">Si ya estas registrado ingresa tu correo electrónico</string>
+
+    <!-- Textos del fragmento de registro manual -->
+    <string name="text_register_title">Registro de Socios</string>
+    <string name="text_email_label">Escriba la dirección de su correo electrónico</string>
+    <string name="text_password_label">Contraseña</string>
+    <string name="hint_email_1">Correo Electrónico</string>
+    <string name="hint_password_1">Ingrese su Clave</string>
+    <string name="hint_password_2">Confirme la Clave</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="btn_next">Continuar</string>
+
+
+    <!-- Textos para el Home del Cliente -->
+    <string name="title_activity_home">Socio Loyola</string>
+    <string name="nav_header_title">Socios Loyola</string>
+    <string name="nav_header_subtitle">Cooperativa de Ahorro y Crédito Loyola</string>
+    <string name="nav_header_desc">Cooperativa de Ahorro y Crédito Loyolar</string>
+
+    <string name="action_logout">Cerrar Sesión</string>
+    <string name="menu_home">Socio Loyola</string>
+    <string name="menu_datos">Mis Datos</string>
+    <string name="menu_pictures">Mis Fotografías</string>
+    <string name="menu_assembly">Asambleas</string>
+    <string name="text_wellcome">Bienvenido(a)</string>
+    <string name="text_id_member">Nº Socio(a):</string>
+    <string name="text_inactive_account">Cuenta pendiente a revisión</string>
+    <string name="btn_fix_data">Corregir Datos</string>
+    <string name="icon_user_status">Estado del socio</string>
+
+    <!-- Textos Mis Datos -->
+    <string name="title_thanks">¡Gracias por Registrarse!</string>
+    <string name="body_thanks">En breve, personal de plataforma validará toda la información
+        proporcionada para ACTIVAR su Cuenta de SOCIO LOYOLA</string>
+    <string name="btn_acept">Aceptar</string>
+
+    <!-- Textos Mis Datos -->
+    <string name="subtitle_my_data">Datos Personales</string>
+    <string name="hint_names">Nombres</string>
+    <string name="hint_last_name_1">Primer Apellido</string>
+    <string name="hint_last_name_2">Segundo Apellido</string>
+    <string name="hint_last_names">Apellidos</string>
+    <string name="hint_id_number">Número de Identificación</string>
+    <string name="hint_birthday">Fecha de Nacimiento</string>
+    <string name="hint_phone_numer">Numero de Celular</string>
+    <string name="text_ext">Extensión</string>
+    <string name="btn_save">Guardar</string>
+
+    <string-array name="list_extensions">
+        <item>CB</item>
+        <item>SC</item>
+        <item>LP</item>
+        <item>OR</item>
+        <item>PO</item>
+        <item>CH</item>
+        <item>PA</item>
+        <item>TA</item>
+        <item>BE</item>
+        <item>E</item>
+        <item>EXT</item>
+    </string-array>
+
+    <!-- Textos para registrar Fotos -->
+    <string name="subtitle_picture">Autentificación Socio</string>
+    <string name="hint_id_member">Número de Socio</string>
+    <string name="text_valid_id">Número de Socio VALIDO</string>
+    <string name="subtitle_pictures_id">Añada la foto de su carnet de identidad</string>
+    <string name="btn_upload_picture_1">Subir Anverso</string>
+    <string name="btn_upload_picture_2">Subir Reverso</string>
+    <string name="text_subtitle_selfie">Hagase una autofoto (Selfie)</string>
+    <string name="text_selfie_hint">Asegúrese que la iluminación y claridad de la foto sea lo mejor
+        posible. Caso contrario podría demorar su registro y activación.</string>
+    <string name="btn_upload_selfie">Subir mi Foto</string>
+
+    <!-- Textos para los terminos de la aplicacion -->
+    <string name="terms_title">TÉRMINOS Y CONDICIONES DE USO</string>
+    <string name="terms_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dapibus euismod orci, eu tincidunt ante lobortis mollis. Cras quis lacinia augue. Quisque pretium sapien mi, a mollis dolor ornare sit amet. Donec quam tellus, tincidunt sit amet sapien vel, auctor consectetur ipsum. Pellentesque vel tellus gravida, tempus quam non, molestie turpis. Phasellus sed rhoncus magna. Fusce ac tortor molestie metus sodales convallis. Integer suscipit dui ac accumsan egestas. Aenean tristique rutrum ante. Etiam egestas, sapien nec rhoncus consequat, mi quam euismod lorem, at pretium sem dolor vitae sem.\n\n
+            Nullam facilisis nibh at eros malesuada, quis accumsan nisi eleifend. Donec vel ante nec velit luctus semper. In laoreet lacinia venenatis. Aliquam vitae convallis magna. Vestibulum vel pellentesque nunc. Suspendisse viverra mauris a diam convallis, a sagittis elit accumsan. Nunc sagittis ullamcorper placerat. Donec magna dui, pulvinar at rutrum a, pulvinar nec metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\n\n
+            Donec nec massa a orci eleifend sodales. Proin semper nunc metus, quis porttitor enim lacinia vitae. Donec eu mollis metus. Curabitur vel gravida purus. In id lectus eu eros tempus blandit quis ac justo. Nulla faucibus volutpat quam. Fusce consectetur et augue quis varius. Pellentesque neque purus, elementum in rutrum eget, feugiat eu erat. Proin lorem mi, ornare vel fringilla non, pulvinar at tellus. Mauris quis quam metus. Pellentesque vehicula sit amet enim vel rhoncus.\n
+    </string>
+    <string name="text_swicth">Acepto</string>
+    <string name="text_swicth_extend">Aceptas haber leido los TERMINOS Y CONDICIONES DE USO de la aplicación y estoy plenamente deacuerdo con ellos</string>
+    <string name="btn_send">Enviar</string>
+    <string name="btn_dont_accept">No Acepto</string>
+
+    <!-- Textos para subir datos al servidor -->
+    <string name="title_upload">Subiendo la información al servidor</string>
+    <string name="label_data">Datos del usuario</string>
+    <string name="label_picture_1">Foto Anverso CI</string>
+    <string name="label_picture_2">Foto Reverso CI</string>
+    <string name="label_selfie">Autofoto</string>
+    <string name="btn_upload_server">Enviar Información</string>
+
+
+    <!-- Textos para las asambleas -->
+    <string name="text_title_assembly_demo">ASAMBLEA EXTRAORDINARIA GESTIÓN 2020</string>
+    <string name="date_demo">19 | Diciembre | 2020</string>
+    <string name="hint_memorys">Memorias</string>
+    <string name="hint_results">Resultados</string>
+    <string name="hint_journey">Orden del día</string>
+
+    <string name="title_assembly_curremt">Asamblea Actual</string>
+    <string name="title_assembly_list">Asambleas Pasadas</string>
+    <string name="no_assembly">No se encontraron registros</string>
+    <string name="btn_login_zoom">Ingresar ZOOM</string>
+    <string name="text_active_state">UD. Está habilitado</string>
+    <string name="text_icon_state">Estado del usuario</string>
+
+    <!--Textos Certificados socio-->
+    <string name="monto_cert">Monto</string>
+    <string name="cantidad_cert">Cantidad</string>
+    <string name="fecha_apertura">Fecha Apertura</string>
+    <string name="nro_certificado">Nro. Certificado</string>
+    <string name="gestion">Gestión</string>
+
+    <!--Textos Credito socio-->
+    <string name="text_creditos">CREDITOS</string>
+
+    <!--Textos Curso socio-->
+    <string name="date_s">Fecha Inicio</string>
+    <string name="date_e">Fecha Fin</string>
+    <string name="photo_course">Foto</string>
+    <string name="expositores">Expositores</string>
+    <string name="type">Tipo</string>
+    <string name="locate">Lugar</string>
+    <string name="url">URL</string>
+    <string name="code">Codigo</string>
+    <string name="password">Password</string>
+    <string name="text_name_c">TextView</string>
+    <string name="fecha_inicio">Fecha Inicio:</string>
+    <string name="text_horario">horarios</string>
+
+    <!--    More Info Tab-->
+    <string name="info_tab_mision_vision_valores">Mision, Vision, Valores</string>
+    <string name="info_tab_voluntariado">Voluntariado</string>
+    <string name="info_tab_responsabilidad_social">Responsabilidad Social</string>
+
+    <!--    Mission, vision, values -->
+    <string name="menu_more_info">Mas Informacion</string>
+    <string name="info_title_mission">Misión</string>
+    <string name="info_content_mission">Mediante sólidos principios cooperativistas y administración financiera eficiente, sana y transparente de los recursos, ofrecemos productos y servicios financieros competitivos que permitan el crecimiento regional y nacional.</string>
+    <string name="info_title_vision">Vision</string>
+    <string name="info_content_vision">Consolidarse como una de las primeras cooperativas de Cochabamba, con suficiente capacidad humana, financiera y tecnológica, contribuyendo al beneficio económico y bienestar de nuestros socios y clientes.</string>
+    <string name="info_title_values">Valores</string>
+    <string name="info_content_values">Las cooperativas se basan en los valores de ayuda mutua, responsabilidad, democracia, igualdad, equidad y solidaridad. Siguiendo la tradición de sus fundadores sus miembros creen en los valores éticos de honestidad, transparencia, responsabilidad social y preocupación por los demás.</string>
+
+    <!--    Environment variables -->
+<!--    <string name="photo_directory">/</string>-->
+<!--    <string name="host_service">http://192.168.0.125/</string>-->
+<!--    <string name="home_service">Loyola_Web/services/</string>-->
+<!--    <string name="home_aplication">Loyola_Web/</string>-->
+<!--    <string name="dir_photo_course" >uploads/</string>-->
+<!--    <string name="dir_photo_service" >photo_perfil/</string>-->
+<!--    <string name="zoom_app_key" />-->
+<!--    <string name="zoom_app_secret" />-->
+<!--    <string name="google_id_token" />-->
+<!--    <string name="dir_social_responsibility_files">test</string>-->
+
+
+        <string name="host_service">https://www.quarksocialcloud.com/</string>
+        <string name="home_aplication">apps_server/loyola/</string>
+        <string name="dir_photo_service">uploads/</string>
+
+        <string name="photo_directory">/</string>
+        <string name="home_service">apps_server/loyola/services/</string>
+        <string name="dir_photo_course">apps_server/loyola/uploads/</string>
+        <string name="dir_social_responsibility_files">apps_server/loyola/social-responsibility/</string>
+        <string name="zoom_app_key" />
+        <string name="zoom_app_secret" />
+        <string name="google_id_token" />
+
+    <!-- Permissions -->
+    <string name="permission_rationale_location">Acceso a la localización es requerido.</string>
+    <string name="location_permission_denied">Se necesita habilitar la localización.</string>
+    <string name="permission_required_toast">Acceso a la localización es requerido.</string>
+
+</resources>
