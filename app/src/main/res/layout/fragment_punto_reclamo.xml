@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_punto_reclamo">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Por favor complete el siguiente formulario"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imv_banner_preclamo" />
+
+    <ImageView
+        android:id="@+id/imv_banner_preclamo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/banner_punto_reclamo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_feche_echo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/concrete"
+        android:clickable="true"
+        android:focusable="false"
+        android:hint="Fecha del echo"
+        android:inputType="date"
+        android:maxLines="1"
+        android:padding="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imv_banner_preclamo" />
+
+    <Spinner
+        android:id="@+id/sp_categoria"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:autofillHints="Categoria"
+        android:background="@color/concrete"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/et_feche_echo"
+        app:layout_constraintTop_toBottomOf="@+id/imv_banner_preclamo" />
+
+    <Spinner
+        android:id="@+id/sp_subcategoria"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="15dp"
+        android:autofillHints="Categoria"
+        android:background="@color/concrete"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imv_banner_preclamo" />
+
+
+    <EditText
+        android:id="@+id/et_monto_comprometido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/concrete"
+        android:hint="Monto\nComprometido"
+        android:inputType="number"
+        android:maxLines="1"
+        android:padding="5dp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_feche_echo" />
+
+    <RadioButton
+        android:id="@+id/rbt_bolivianos"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="Bolivianos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/et_monto_comprometido"
+        app:layout_constraintTop_toBottomOf="@+id/sp_categoria" />
+
+    <RadioButton
+
+        android:id="@+id/rbt_dolares"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:hint="Dolares"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/et_monto_comprometido"
+        app:layout_constraintTop_toBottomOf="@+id/rbt_bolivianos" />
+
+    <Spinner
+        android:id="@+id/sp_agencia"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="15dp"
+        android:autofillHints="Agencia"
+        android:background="@color/concrete"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_subcategoria" />
+
+    <EditText
+        android:id="@+id/et_descripcion"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/concrete"
+        android:hint="Descripcion"
+        android:inputType="textMultiLine"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rbt_dolares" />
+
+    <Button
+        android:id="@+id/btn_enviar_reclamo"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/second_green"
+        android:hint="Enviar Reclamo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_descripcion" />
+</androidx.constraintlayout.widget.ConstraintLayout>
