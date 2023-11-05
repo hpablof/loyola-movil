@@ -1,268 +1,441 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_home"
-    tools:context=".view.ui.home.HomeFragment">
-
-    <ImageView
-        android:id="@+id/image_selfie"
-        android:layout_width="180dp"
-        android:layout_height="146dp"
-        android:layout_marginTop="15dp"
-        android:contentDescription="@string/label_selfie"
-        android:src="@drawable/ic_portrait_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/text_wellcome"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/font_color_home"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/text_user_fullname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/font_color_home"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_selfie" />
-
-    <ImageView
-        android:id="@+id/image_status_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/icon_user_status"
-        android:src="@drawable/icon_status_user_inactive"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_user_fullname" />
-
-    <TextView
-        android:id="@+id/text_inactive_status"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/text_inactive_account"
-        android:textColor="@android:color/holo_red_light"
-        android:textStyle="bold"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_status_user" />
-
-    <Button
-        android:id="@+id/btn_fix_data"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="36dp"
-        android:text="@string/btn_fix_data"
-        style="@style/button_login"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/carView"
+    android:scrollbars="vertical">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/background_card"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_inactive_status">
-
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        tools:context=".view.ui.home.HomeFragment">
         <LinearLayout
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
+            android:id="@+id/panelForBanner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-    <!--Socio Number Row-->
-            <LinearLayout
-                android:id="@+id/nav_socio_number_row"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/homeImageSlider"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/textView19"
-                    android:layout_width="204dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginEnd="8dp"
-                    android:gravity="end"
-                    android:text="@string/text_id_member"
-                    android:textColor="@color/main_green" />
-
-                <TextView
-                    android:id="@+id/text_user_id_member"
-                    android:layout_width="36dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginEnd="16dp"
-                    android:textColor="@color/main_green"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-    <!--Nav first row-->
-            <LinearLayout
-                android:id="@+id/nav_first_row"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
-                <LinearLayout
-                    android:id="@+id/btn_certificados"
-                    android:layout_width="110dp"
-                    android:layout_height="97dp"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginTop="4dp"
-                    android:elevation="@dimen/nav_header_height"
-                    android:orientation="vertical"
-                    android:background="@drawable/shape_radius_layout">
-
-                    <ImageView
-                        android:id="@+id/imageView5"
-                        android:layout_width="match_parent"
-                        android:layout_height="32dp"
-                        android:layout_marginTop="12dp"
-                        android:contentDescription="TODO"
-                        android:src="@drawable/btn_certificacion" />
-
-                    <TextView
-                        android:id="@+id/textView42"
-                        android:layout_width="match_parent"
-                        android:layout_height="34dp"
-                        android:layout_marginTop="1dp"
-                        android:gravity="center"
-                        android:text="CERTIFICADOS DE APORTACIÓN"
-                        android:textColor="#0B0101"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/btn_credito"
-                    android:layout_width="107dp"
-                    android:layout_height="97dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="4dp"
-                    android:orientation="vertical"
-                    android:background="@drawable/shape_radius_layout">
-
-                    <ImageView
-                        android:id="@+id/ico_credito"
-                        android:layout_width="match_parent"
-                        android:layout_height="31dp"
-                        android:layout_marginTop="16dp"
-                        android:src="@drawable/btn_credito" />
-
-                    <TextView
-                        android:id="@+id/textView44"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="7dp"
-                        android:gravity="center"
-                        android:text="@string/text_creditos"
-                        android:textColor="#040404"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/btn_curso"
-                    android:layout_width="109dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="4dp"
-                    android:orientation="vertical"
-                    android:background="@drawable/shape_radius_layout">
-
-                    <ImageView
-                        android:id="@+id/imageView6"
-                        android:layout_width="match_parent"
-                        android:layout_height="25dp"
-                        android:layout_marginTop="16dp"
-                        android:contentDescription="TODO"
-                        android:src="@drawable/btn_cursos" />
-
-                    <TextView
-                        android:id="@+id/textView45"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:gravity="center"
-                        android:text="CURSOS"
-                        android:textColor="#090808"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-            </LinearLayout>
-    <!--Nav Second Row-->
-            <LinearLayout
-                android:id="@+id/nav_second_row"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
-                <LinearLayout
-                    android:id="@+id/btn_sucursales"
-                    android:layout_width="110dp"
-                    android:layout_height="97dp"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginTop="4dp"
-                    android:elevation="@dimen/nav_header_height"
-                    android:orientation="vertical"
-                    android:background="@drawable/shape_radius_layout">
-
-                    <ImageView
-                        android:id="@+id/imageView7"
-                        android:layout_width="match_parent"
-                        android:layout_height="32dp"
-                        android:layout_marginTop="12dp"
-                        android:src="@drawable/btn_certificacion" />
-
-                    <TextView
-                        android:id="@+id/textView43"
-                        android:layout_width="match_parent"
-                        android:layout_height="34dp"
-                        android:layout_marginTop="1dp"
-                        android:gravity="center"
-                        android:text="Sucursales"
-                        android:textColor="#0B0101"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
+                android:layout_height="380dp"
+                app:iss_auto_cycle="true"
+                app:iss_period="1000"
+                app:iss_delay="0"/>
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+    <!--    First Row Buttons-->
+        <GridLayout
+            android:id="@+id/home_row_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/panelForBanner"
+            android:columnCount="2"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="16dp">
+            <LinearLayout
+                android:layout_columnWeight="2"
+                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/btn_ahorra_con_nosotros"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AHORRA"
+                    android:textSize="18sp" />
+                <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="con nosotros"
+                android:textSize="14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/btn_elige_credito"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ELIJE EL CREDITO"
+                    android:textSize="18sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="con nosotros"
+                    android:textSize="14sp" />
+            </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </GridLayout>
+    <!--    Panel Capacitaciones-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/panelForCapacitacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/home_row_1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/home_banner_capacitate"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/cursosBtn"
+                android:layout_width="wrap_content"
+                app:backgroundTint="@color/orange_1"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:text="Acceder a los cursos"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/imageView5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.711" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--    First Row Buttons-->
+        <GridLayout
+            android:id="@+id/home_row_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/panelForCapacitacion"
+            android:columnCount="2"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="16dp">
+            <LinearLayout
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/btn_seguridad"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RECOMENDACIONES"
+                    android:textSize="18sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="de seguridad"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_columnWeight="7"
+                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/btn_reclamo"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PUNTO"
+                    android:textSize="18sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="de reclamo"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </GridLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/home_row_2"
+            android:paddingVertical="50dp">
+            <ImageView
+                android:id="@+id/homeMemoriaInstitucionalBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_memoria_institucional"
+                android:adjustViewBounds="true"/>
+        </LinearLayout>
+    <!--    <ImageView-->
+    <!--        android:id="@+id/image_selfie"-->
+    <!--        android:layout_width="180dp"-->
+    <!--        android:layout_height="146dp"-->
+    <!--        android:layout_marginTop="15dp"-->
+    <!--        android:contentDescription="@string/label_selfie"-->
+    <!--        android:src="@drawable/ic_portrait_24"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.498"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/textView13" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView13"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="4dp"-->
+    <!--        android:text="@string/text_wellcome"-->
+    <!--        android:textAppearance="@style/TextAppearance.AppCompat.Display1"-->
+    <!--        android:textColor="@color/font_color_home"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/text_user_fullname"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:textColor="@color/font_color_home"-->
+    <!--        android:textSize="25sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        android:paddingLeft="20dp"-->
+    <!--        android:paddingRight="20dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.498"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/image_selfie" />-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/image_status_user"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="8dp"-->
+    <!--        android:contentDescription="@string/icon_user_status"-->
+    <!--        android:src="@drawable/icon_status_user_inactive"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.498"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/text_user_fullname" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/text_inactive_status"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="20dp"-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        android:layout_marginEnd="20dp"-->
+    <!--        android:text="@string/text_inactive_account"-->
+    <!--        android:textColor="@android:color/holo_red_light"-->
+    <!--        android:textStyle="bold"-->
+    <!--        android:gravity="center"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/image_status_user" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btn_fix_data"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="36dp"-->
+    <!--        android:layout_marginBottom="36dp"-->
+    <!--        android:text="@string/btn_fix_data"-->
+    <!--        style="@style/button_login"-->
+    <!--        android:visibility="invisible"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--    <com.google.android.material.card.MaterialCardView-->
+    <!--        android:id="@+id/carView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="8dp"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        android:background="@color/background_card"-->
+    <!--        app:cardCornerRadius="8dp"-->
+    <!--        app:cardElevation="8dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/text_inactive_status">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:paddingTop="15dp"-->
+    <!--            android:paddingBottom="15dp"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="vertical">-->
+    <!--    &lt;!&ndash;Socio Number Row&ndash;&gt;-->
+    <!--            <LinearLayout-->
+    <!--                android:id="@+id/nav_socio_number_row"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal">-->
+    <!--                <TextView-->
+    <!--                    android:id="@+id/textView19"-->
+    <!--                    android:layout_width="204dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginTop="2dp"-->
+    <!--                    android:layout_marginEnd="8dp"-->
+    <!--                    android:gravity="end"-->
+    <!--                    android:text="@string/text_id_member"-->
+    <!--                    android:textColor="@color/main_green" />-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/text_user_id_member"-->
+    <!--                    android:layout_width="36dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginTop="2dp"-->
+    <!--                    android:layout_marginEnd="16dp"-->
+    <!--                    android:textColor="@color/main_green"-->
+    <!--                    android:textSize="14sp"-->
+    <!--                    android:textStyle="bold" />-->
+    <!--            </LinearLayout>-->
+    <!--    &lt;!&ndash;Nav first row&ndash;&gt;-->
+    <!--            <LinearLayout-->
+    <!--                android:id="@+id/nav_first_row"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="5dp"-->
+    <!--                android:orientation="horizontal">-->
+    <!--                <LinearLayout-->
+    <!--                    android:id="@+id/btn_certificados"-->
+    <!--                    android:layout_width="110dp"-->
+    <!--                    android:layout_height="97dp"-->
+    <!--                    android:layout_marginStart="14dp"-->
+    <!--                    android:layout_marginTop="4dp"-->
+    <!--                    android:elevation="@dimen/nav_header_height"-->
+    <!--                    android:orientation="vertical"-->
+    <!--                    android:background="@drawable/shape_radius_layout">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/imageView5"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="32dp"-->
+    <!--                        android:layout_marginTop="12dp"-->
+    <!--                        android:contentDescription="TODO"-->
+    <!--                        android:src="@drawable/btn_certificacion" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/textView42"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="34dp"-->
+    <!--                        android:layout_marginTop="1dp"-->
+    <!--                        android:gravity="center"-->
+    <!--                        android:text="CERTIFICADOS DE APORTACIÓN"-->
+    <!--                        android:textColor="#0B0101"-->
+    <!--                        android:textSize="10sp"-->
+    <!--                        android:textStyle="bold" />-->
+    <!--                </LinearLayout>-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:id="@+id/btn_credito"-->
+    <!--                    android:layout_width="107dp"-->
+    <!--                    android:layout_height="97dp"-->
+    <!--                    android:layout_marginStart="8dp"-->
+    <!--                    android:layout_marginTop="4dp"-->
+    <!--                    android:orientation="vertical"-->
+    <!--                    android:background="@drawable/shape_radius_layout">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/ico_credito"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="31dp"-->
+    <!--                        android:layout_marginTop="16dp"-->
+    <!--                        android:src="@drawable/btn_credito" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/textView44"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginTop="7dp"-->
+    <!--                        android:gravity="center"-->
+    <!--                        android:text="@string/text_creditos"-->
+    <!--                        android:textColor="#040404"-->
+    <!--                        android:textSize="10sp"-->
+    <!--                        android:textStyle="bold" />-->
+    <!--                </LinearLayout>-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:id="@+id/btn_curso"-->
+    <!--                    android:layout_width="109dp"-->
+    <!--                    android:layout_height="match_parent"-->
+    <!--                    android:layout_marginStart="8dp"-->
+    <!--                    android:layout_marginTop="4dp"-->
+    <!--                    android:orientation="vertical"-->
+    <!--                    android:background="@drawable/shape_radius_layout">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/imageView6"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="25dp"-->
+    <!--                        android:layout_marginTop="16dp"-->
+    <!--                        android:contentDescription="TODO"-->
+    <!--                        android:src="@drawable/btn_cursos" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/textView45"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginTop="12dp"-->
+    <!--                        android:gravity="center"-->
+    <!--                        android:text="CURSOS"-->
+    <!--                        android:textColor="#090808"-->
+    <!--                        android:textSize="10sp"-->
+    <!--                        android:textStyle="bold" />-->
+
+    <!--                </LinearLayout>-->
+    <!--            </LinearLayout>-->
+    <!--    &lt;!&ndash;Nav Second Row&ndash;&gt;-->
+    <!--            <LinearLayout-->
+    <!--                android:id="@+id/nav_second_row"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="5dp"-->
+    <!--                android:orientation="horizontal">-->
+    <!--                <LinearLayout-->
+    <!--                    android:id="@+id/btn_sucursales"-->
+    <!--                    android:layout_width="110dp"-->
+    <!--                    android:layout_height="97dp"-->
+    <!--                    android:layout_marginStart="14dp"-->
+    <!--                    android:layout_marginTop="4dp"-->
+    <!--                    android:elevation="@dimen/nav_header_height"-->
+    <!--                    android:orientation="vertical"-->
+    <!--                    android:background="@drawable/shape_radius_layout">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/imageView7"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="32dp"-->
+    <!--                        android:layout_marginTop="12dp"-->
+    <!--                        android:src="@drawable/btn_certificacion" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/textView43"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="34dp"-->
+    <!--                        android:layout_marginTop="1dp"-->
+    <!--                        android:gravity="center"-->
+    <!--                        android:text="Sucursales"-->
+    <!--                        android:textColor="#0B0101"-->
+    <!--                        android:textSize="10sp"-->
+    <!--                        android:textStyle="bold" />-->
+    <!--                </LinearLayout>-->
+    <!--            </LinearLayout>-->
+    <!--        </LinearLayout>-->
+    <!--    </com.google.android.material.card.MaterialCardView>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -22,6 +22,9 @@ import app.wiserkronox.loyolasocios.service.repository.UserRest
 import app.wiserkronox.loyolasocios.view.ui.HomeActivity
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
+import com.denzcoskun.imageslider.ImageSlider
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -41,6 +44,10 @@ class HomeFragment : Fragment() {
     private  lateinit var btn_course: LinearLayout
     private  lateinit var btn_sucursales: LinearLayout
 
+    private lateinit var cursosBtn:Button
+
+
+
     companion object {
         private const val TAG = "HomeFragment"
     }
@@ -53,52 +60,63 @@ class HomeFragment : Fragment() {
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         val root = inflater.inflate(R.layout.fragment_home, container, false)
+        val imageSlider = root.findViewById<ImageSlider>(R.id.homeImageSlider);
+        val imageList = ArrayList<SlideModel>()
+        imageList.add(SlideModel(R.drawable.banner_home_1))
+        imageList.add(SlideModel(R.drawable.banner_home_2))
+        imageList.add(SlideModel(R.drawable.banner_home_3))
+        imageSlider.setImageList(imageList, ScaleTypes.CENTER_CROP)
 
-        userName = root.findViewById(R.id.text_user_fullname)
-        userSelfie = root.findViewById(R.id.image_selfie)
-        userIDMember = root.findViewById(R.id.text_user_id_member)
-        userStatus = root.findViewById(R.id.image_status_user)
-        inActiveStatus = root.findViewById(R.id.text_inactive_status)
-        btnReview = root.findViewById(R.id.btn_fix_data)
-        btn_certificado = root.findViewById(R.id.btn_certificados)
-        btn_credit = root.findViewById(R.id.btn_credito)
-        btn_course = root.findViewById(R.id.btn_curso)
-        btn_sucursales = root.findViewById(R.id.btn_sucursales)
-        val user = LoyolaApplication.getInstance()?.user
-
-        btnReview.setOnClickListener{
-            (activity as HomeActivity).fixData()
-        }
-        btn_certificado.setOnClickListener{
-            (activity as HomeActivity).goCertificate()
-        }
-        btn_credit.setOnClickListener{
-            (activity as HomeActivity).goCredit()
-        }
-        btn_course.setOnClickListener{
+        //        NAVIGATION
+        cursosBtn = root.findViewById(R.id.cursosBtn)
+        cursosBtn.setOnClickListener{
             (activity as HomeActivity).goCourse()
         }
-        btn_sucursales.setOnClickListener{
-            (activity as HomeActivity).goMaps()
-        }
-        user?.let {
-            userName.text = it.names+" "+it.last_name_1+" "+it.last_name_2
-            userIDMember.text = it.id_member
-            updateStatusIcon( it )
+//        userName = root.findViewById(R.id.text_user_fullname)
+//        userSelfie = root.findViewById(R.id.image_selfie)
+//        userIDMember = root.findViewById(R.id.text_user_id_member)
+//        userStatus = root.findViewById(R.id.image_status_user)
+//        inActiveStatus = root.findViewById(R.id.text_inactive_status)
+//        btnReview = root.findViewById(R.id.btn_fix_data)
+//        btn_certificado = root.findViewById(R.id.btn_certificados)
+//        btn_credit = root.findViewById(R.id.btn_credito)
+//        btn_course = root.findViewById(R.id.btn_curso)
+//        btn_sucursales = root.findViewById(R.id.btn_sucursales)
+//        val user = LoyolaApplication.getInstance()?.user
 
-            if( it.selfie.startsWith("file") ) {
-                val src = MediaStore.Images.Media.getBitmap(activity?.getContentResolver(), Uri.parse(it?.selfie))
-                if (src != null) {
-                    val dr = RoundedBitmapDrawableFactory.create(resources, src)
-                    dr.cornerRadius = Math.max(src.width, src.height) / 2.0f
-                    userSelfie.setImageDrawable(dr)
-                }
-            }
-
-            if( (activity as HomeActivity).isOnline() ) {
-                getUserStatusFromServer(it)
-            }
-        }
+//        btnReview.setOnClickListener{
+//            (activity as HomeActivity).fixData()
+//        }
+//        btn_certificado.setOnClickListener{
+//            (activity as HomeActivity).goCertificate()
+//        }
+//        btn_credit.setOnClickListener{
+//            (activity as HomeActivity).goCredit()
+//        }
+//        btn_course.setOnClickListener{
+//            (activity as HomeActivity).goCourse()
+//        }
+//        btn_sucursales.setOnClickListener{
+//            (activity as HomeActivity).goMaps()
+//        }
+//        user?.let {
+//            userName.text = it.names+" "+it.last_name_1+" "+it.last_name_2
+//            userIDMember.text = it.id_member
+//            updateStatusIcon( it )
+//
+//            if( it.selfie.startsWith("file") ) {
+//                val src = MediaStore.Images.Media.getBitmap(activity?.getContentResolver(), Uri.parse(it?.selfie))
+//                if (src != null) {
+//                    val dr = RoundedBitmapDrawableFactory.create(resources, src)
+//                    dr.cornerRadius = Math.max(src.width, src.height) / 2.0f
+//                    userSelfie.setImageDrawable(dr)
+//                }
+//            }
+//
+//            if( (activity as HomeActivity).isOnline() ) {
+//                getUserStatusFromServer(it)
+//            }
+//        }
 
         return root
     }
