@@ -44,6 +44,7 @@ class HomeFragment : Fragment() {
     private  lateinit var btn_course: LinearLayout
     private  lateinit var btn_sucursales: LinearLayout
 
+    private lateinit var ahorraConNostros: ImageView
     private lateinit var cursosBtn:Button
 
 
@@ -68,6 +69,10 @@ class HomeFragment : Fragment() {
         imageSlider.setImageList(imageList, ScaleTypes.CENTER_CROP)
 
         //        NAVIGATION
+        ahorraConNostros = root.findViewById(R.id.ahoraConNostrosBtn)
+        ahorraConNostros.setOnClickListener{
+            (activity as HomeActivity).goAhorraConNosostros()
+        }
         cursosBtn = root.findViewById(R.id.cursosBtn)
         cursosBtn.setOnClickListener{
             (activity as HomeActivity).goCourse()

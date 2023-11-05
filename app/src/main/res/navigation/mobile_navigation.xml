@@ -103,4 +103,11 @@
         android:name="app.wiserkronox.loyolasocios.view.ui.home.MapFragment"
         android:label="Sucursales"
         tools:layout="@layout/fragment_map" />
+    <!--    HOME-->
+    <fragment
+        android:id="@+id/nav_ahorra_con_nosotros"
+        android:name="app.wiserkronox.loyolasocios.view.ui.home.AhorraNosostrosFragment"
+        android:label="Ahorra con nostros"
+        tools:layout="@layout/fragment_ahorra_nosotros"
+        />
 </navigation>
