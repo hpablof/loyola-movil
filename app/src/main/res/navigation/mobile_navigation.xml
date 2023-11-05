@@ -122,4 +122,17 @@
         android:label="Punto de Reclamo"
         tools:layout="@layout/fragment_punto_reclamo"
         />
+
+    <fragment
+        android:id="@+id/nav_registrarse"
+        android:name="app.wiserkronox.loyolasocios.view.ui.ManualRegisterFragment"
+        android:label="Registrarse"
+        tools:layout="@layout/fragment_manual_register"
+        />
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="app.wiserkronox.loyolasocios.view.ui.WithoutSessionFragment"
+        android:label="Iniciar Sesión"
+        tools:layout="@layout/fragment_without_session"
+        />
 </navigation>

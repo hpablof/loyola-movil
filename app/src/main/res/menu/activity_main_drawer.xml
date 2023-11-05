@@ -17,13 +17,37 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/menu_pictures" />
         <item
+            android:id="@+id/nav_certificate"
+            android:icon="@drawable/zm_ic_filetype_folder"
+            android:title="@string/menu_certificados_aportacion"
+            />
+        <item
+            android:id="@+id/nav_credit"
+            android:icon="@drawable/ic_selected_circle_indicator"
+            android:title="@string/menu_mis_creditos"
+            />
+        <item
             android:id="@+id/nav_assembly"
             android:icon="@drawable/icon_assembly"
             android:title="@string/menu_assembly" />
         <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/zm_mm_pinned_icon"
+            android:title="@string/menu_sucursales" />
+        <item
             android:id="@+id/nav_info"
             android:icon="@drawable/zm_ic_chat_info"
             android:title="@string/menu_more_info"
+            />
+        <item
+            android:id="@+id/nav_registrarse"
+            android:icon="@drawable/zm_app_user_default"
+            android:title="@string/menu_registrarse"
+            />
+        <item
+            android:id="@+id/nav_login"
+            android:icon="@drawable/ic_login_sso"
+            android:title="@string/menu_inicial_session"
             />
     </group>
 </menu>
