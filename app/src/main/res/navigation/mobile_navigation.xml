@@ -122,6 +122,12 @@
         android:label="Punto de Reclamo"
         tools:layout="@layout/fragment_punto_reclamo"
         />
+    <fragment
+        android:id="@+id/nav_recomendaciones_seguridad"
+        android:name="app.wiserkronox.loyolasocios.view.ui.home.RecomendacionesSeguridadFragment"
+        android:label="Recomendaciones de Seguridad"
+        tools:layout="@layout/fragment_recomendacion_seguridad"
+        />
 
     <fragment
         android:id="@+id/nav_registrarse"

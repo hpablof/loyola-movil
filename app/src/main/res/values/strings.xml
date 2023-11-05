@@ -201,5 +201,48 @@
     <string name="permission_rationale_location">Acceso a la localización es requerido.</string>
     <string name="location_permission_denied">Se necesita habilitar la localización.</string>
     <string name="permission_required_toast">Acceso a la localización es requerido.</string>
+    
+    <!--Fragment recomendaciones de seguridad-->
+    <string name="info_recomendacion_cajerso">
+- Evite realizar transacciones en el cajero automático cuando observe la presencia de personas sospechosas cerca del cajero.
 
+- No utilice el cajero automático si existen objetos extraños (sobrepuestos o pegados) en la lectora de tarjetas o el teclado.
+
+\n- Si el cajero está fuera de servicio, no introduzca su tarjeta.
+
+\n- Durante la transacción utilice su cuerpo para bloquear la visibilidad de otras personas.
+
+\n- Digite su clave verificando que no sea observado por ninguna persona.
+
+\n- Retire su tarjeta una vez que el cajero automático se lo indique.
+
+\n- No acepte ayuda de personas extrañas.
+
+\n- Cuente su dinero discretamente.
+
+\n- Si el cajero le entrega un monto de efectivo diferente al solicitado, comunique este hecho a la Cooperativa.
+
+\n- Revise y conserve el comprobante de transacción que emite el cajero automático.
+
+\n- Si va a utilizar cajeros automáticos de otras instituciones, constate previamente que estos cuentan con buena iluminación y cámaras de seguridad.
+
+\n- Solicite el cambio de su tarjeta cuando ésta se encuentre deteriorada o parcialmente rota.
+
+\n- En caso de retención, pérdida o robo de su tarjeta visite una de nuestras Oficinas, para el bloqueo temporal de su tarjeta.
+
+\n- Para desbloqueo o activación de la tarjeta, visite una de nuestras Oficinas.
+    </string>
+    <string name="info_recomendacion_pin">
+        - Cambie periódicamente su PIN por medio de los Cajeros Automáticos.
+        \n- Memorice su PIN, NO lo escriba en la tarjeta u otro documento.
+        \n- Si usted sospecha que alguien conoce o usa su PIN, cámbielo de inmediato.
+        \n- Recuerde que las claves son personales e intransferibles.
+
+    </string>
+    <string name="info_recomendacion_agencia">
+        \n- Cuando visite nuestras agencias, recuerde:
+        \n- No acepte ayuda de extraños.
+        \n- Cuente su dinero en forma discreta.
+        \n- Procure no delegar a terceros el retiro de cantidades significativas de dinero.
+    </string>
 </resources>

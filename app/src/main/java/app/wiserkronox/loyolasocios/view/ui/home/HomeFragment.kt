@@ -47,7 +47,9 @@ class HomeFragment : Fragment() {
     private lateinit var ahorraConNostros: ImageView
     private lateinit var elijeCredito: LinearLayout
     private lateinit var cursosBtn:Button
+    private lateinit var recomendacionesSeguridad: LinearLayout
     private lateinit var puntoReclamo:LinearLayout
+
 
 
 
@@ -89,6 +91,11 @@ class HomeFragment : Fragment() {
         puntoReclamo = root.findViewById(R.id.puntoReclamoBtn)
         puntoReclamo.setOnClickListener{
             (activity as HomeActivity).goPuntoReclamo()
+        }
+
+        recomendacionesSeguridad = root.findViewById(R.id.recomendacionesSeguridad)
+        recomendacionesSeguridad.setOnClickListener{
+            (activity as HomeActivity).goRecomendacionesSeguridad()
         }
 //        userName = root.findViewById(R.id.text_user_fullname)
 //        userSelfie = root.findViewById(R.id.image_selfie)

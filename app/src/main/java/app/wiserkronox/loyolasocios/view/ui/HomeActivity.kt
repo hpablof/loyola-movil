@@ -167,6 +167,9 @@ class HomeActivity : AppCompatActivity() {
     fun goPuntoReclamo() {
         navController.navigate(R.id.nav_punto_reclamo, null, null);
     }
+    fun goRecomendacionesSeguridad() {
+        navController.navigate(R.id.nav_recomendaciones_seguridad, null, null);
+    }
 
     /*********************************************************************************************
      * Funciones de conexion con el servidor
