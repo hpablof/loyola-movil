@@ -60,6 +60,7 @@
                 android:textSize="14sp" />
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/elijeCreditoBtn"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 android:layout_width="wrap_content"

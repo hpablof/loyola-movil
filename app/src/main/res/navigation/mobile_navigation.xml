@@ -110,4 +110,10 @@
         android:label="Ahorra con nostros"
         tools:layout="@layout/fragment_ahorra_nosotros"
         />
+    <fragment
+        android:id="@+id/nav_elije_credito"
+        android:name="app.wiserkronox.loyolasocios.view.ui.home.ElijeCreditoFragment"
+        android:label="Elije el credito que necesitas"
+        tools:layout="@layout/fragment_elije_credito"
+        />
 </navigation>

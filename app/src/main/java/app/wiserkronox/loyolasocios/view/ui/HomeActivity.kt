@@ -152,6 +152,9 @@ class HomeActivity : AppCompatActivity() {
     fun goAhorraConNosostros() {
         navController.navigate(R.id.nav_ahorra_con_nosotros, null, null);
     }
+    fun goElijeCredito() {
+        navController.navigate(R.id.nav_elije_credito, null, null);
+    }
 
 
     /*********************************************************************************************

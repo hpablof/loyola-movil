@@ -45,6 +45,7 @@ class HomeFragment : Fragment() {
     private  lateinit var btn_sucursales: LinearLayout
 
     private lateinit var ahorraConNostros: ImageView
+    private lateinit var elijeCredito: LinearLayout
     private lateinit var cursosBtn:Button
 
 
@@ -73,6 +74,12 @@ class HomeFragment : Fragment() {
         ahorraConNostros.setOnClickListener{
             (activity as HomeActivity).goAhorraConNosostros()
         }
+
+        elijeCredito = root.findViewById(R.id.elijeCreditoBtn)
+        elijeCredito.setOnClickListener{
+            (activity as HomeActivity).goElijeCredito()
+        }
+
         cursosBtn = root.findViewById(R.id.cursosBtn)
         cursosBtn.setOnClickListener{
             (activity as HomeActivity).goCourse()
