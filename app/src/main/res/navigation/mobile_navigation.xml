@@ -116,4 +116,10 @@
         android:label="Elije el credito que necesitas"
         tools:layout="@layout/fragment_elije_credito"
         />
+    <fragment
+        android:id="@+id/nav_punto_reclamo"
+        android:name="app.wiserkronox.loyolasocios.view.ui.home.PuntoReclamoFragment"
+        android:label="Punto de Reclamo"
+        tools:layout="@layout/fragment_punto_reclamo"
+        />
 </navigation>

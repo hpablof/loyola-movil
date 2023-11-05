@@ -45,7 +45,7 @@
     <Spinner
         android:id="@+id/sp_categoria"
         android:layout_width="110dp"
-        android:layout_height="wrap_content"
+        android:layout_height="36dp"
         android:layout_marginTop="100dp"
         android:autofillHints="Categoria"
         android:background="@color/concrete"
@@ -57,7 +57,7 @@
     <Spinner
         android:id="@+id/sp_subcategoria"
         android:layout_width="110dp"
-        android:layout_height="wrap_content"
+        android:layout_height="36dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="15dp"
         android:autofillHints="Categoria"
@@ -105,7 +105,7 @@
     <Spinner
         android:id="@+id/sp_agencia"
         android:layout_width="110dp"
-        android:layout_height="wrap_content"
+        android:layout_height="36dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="15dp"
         android:autofillHints="Agencia"

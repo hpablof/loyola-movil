@@ -146,6 +146,7 @@
                     android:textSize="14sp" />
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/puntoReclamoBtn"
                 android:layout_columnWeight="7"
                 android:layout_rowWeight="1"
                 android:layout_width="wrap_content"

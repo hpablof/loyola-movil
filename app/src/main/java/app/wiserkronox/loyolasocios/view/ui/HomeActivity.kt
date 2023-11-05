@@ -155,7 +155,9 @@ class HomeActivity : AppCompatActivity() {
     fun goElijeCredito() {
         navController.navigate(R.id.nav_elije_credito, null, null);
     }
-
+    fun goPuntoReclamo() {
+        navController.navigate(R.id.nav_punto_reclamo, null, null);
+    }
 
     /*********************************************************************************************
      * Funciones de conexion con el servidor
