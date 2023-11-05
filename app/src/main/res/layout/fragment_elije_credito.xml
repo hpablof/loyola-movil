@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageView
         android:id="@+id/btn_cr_vivienda"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -34,7 +34,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_cr_vivienda" />
 
-    <Button
+    <ImageView
         android:id="@+id/btn_cr_vehicular"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_cr_vehicular" />
 
 
-    <Button
+    <ImageView
         android:id="@+id/btn_cr_consumo"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -74,7 +74,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_cr_consumo" />
 
-    <Button
+    <ImageView
         android:id="@+id/btn_cr_microcredito"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -95,7 +95,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_cr_microcredito" />
 
 
-    <Button
+    <ImageView
         android:id="@+id/btn_cr_express"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -114,7 +114,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_cr_express" />
 
-    <Button
+    <ImageView
         android:id="@+id/btn_cr_productivo"
         android:layout_width="100dp"
         android:layout_height="100dp"
