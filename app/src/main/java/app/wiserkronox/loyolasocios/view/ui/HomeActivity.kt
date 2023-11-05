@@ -149,6 +149,9 @@ class HomeActivity : AppCompatActivity() {
     fun goMaps(){
         navController.navigate(R.id.nav_map, null, null);
     }
+    fun goAhorraConNosostros() {
+        navController.navigate(R.id.nav_ahorra_con_nosotros, null, null);
+    }
 
 
     /*********************************************************************************************
