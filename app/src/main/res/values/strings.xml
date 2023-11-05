@@ -39,10 +39,17 @@
     <string name="nav_header_desc">Cooperativa de Ahorro y Crédito Loyolar</string>
 
     <string name="action_logout">Cerrar Sesión</string>
-    <string name="menu_home">Socio Loyola</string>
+    <string name="menu_home">Home</string>
     <string name="menu_datos">Mis Datos</string>
     <string name="menu_pictures">Mis Fotografías</string>
+    <string name="menu_certificados_aportacion">Certificados de Aportacion</string>
+    <string name="menu_mis_creditos">Mis Creditos</string>
     <string name="menu_assembly">Asambleas</string>
+    <string name="menu_sucursales">Sucursales</string>
+    <string name="menu_registrarse">Registrarse</string>
+    <string name="menu_inicial_session">Iniciar Sesión</string>
+
+
     <string name="text_wellcome">Bienvenido(a)</string>
     <string name="text_id_member">Nº Socio(a):</string>
     <string name="text_inactive_account">Cuenta pendiente a revisión</string>
@@ -157,7 +164,7 @@
     <string name="info_tab_responsabilidad_social">Responsabilidad Social</string>
 
     <!--    Mission, vision, values -->
-    <string name="menu_more_info">Mas Informacion</string>
+    <string name="menu_more_info">Sobre Nosotros</string>
     <string name="info_title_mission">Misión</string>
     <string name="info_content_mission">Mediante sólidos principios cooperativistas y administración financiera eficiente, sana y transparente de los recursos, ofrecemos productos y servicios financieros competitivos que permitan el crecimiento regional y nacional.</string>
     <string name="info_title_vision">Vision</string>
