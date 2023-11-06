@@ -7,18 +7,14 @@
     android:id="@+id/frameLayout9"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2F2F3"
-    tools:context=".view.ui.home.ListAssemblyFragment">
-
+    android:background="@drawable/background"
+    tools:context=".view.ui.home.ListCourseFragment">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerCourse"
-        android:layout_width="396dp"
-        android:layout_height="622dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:background="#F4F4F4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        app:layoutManager="LinearLayoutManager"
         tools:visibility="invisible" />
 
     <ProgressBar

@@ -52,22 +52,39 @@ class ListCourseFragment : Fragment(), ListCourseCallback {
 
         loader = root.findViewById(R.id.progress_course)
         recycler = root.findViewById(R.id.recyclerCourse)
+        recycler.adapter = AdapterCourse(requireContext(), emptyList())
+        return  root;
 
 
+//        GlobalScope.launch {
+//            val courses = LoyolaApplication.getInstance()?.repository?.getAllCourses()
+//            Log.d(TAG, "" + courses?.size)
+//        }
 
+//        if( (activity as HomeActivity).isOnline() ) {
+//            getUpdateData()
+//        } else {
+//            Toast.makeText(context, "En este momento no existen cursos", Toast.LENGTH_SHORT).show()
+//            ( activity as HomeActivity).goHome()
+//        }
+//        return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         GlobalScope.launch {
             val courses = LoyolaApplication.getInstance()?.repository?.getAllCourses()
-            Log.d(TAG, "" + courses?.size);
+            recycler.adapter = AdapterCourse(requireActivity(), courses!!)
         }
-
         if( (activity as HomeActivity).isOnline() ) {
             getUpdateData()
         } else {
             Toast.makeText(context, "En este momento no existen cursos", Toast.LENGTH_SHORT).show()
             ( activity as HomeActivity).goHome()
         }
-        return root
+
     }
+
 
     fun getUpdateData(){
         activity?.let{
@@ -83,8 +100,8 @@ class ListCourseFragment : Fragment(), ListCourseCallback {
                             if (response.has("courses")) {
                                 val courses = response.getJSONArray("courses")
                                 if (courses.length() > 0) {
-                                    val courseRest = CourseRest(it)
-                                    insertCourses(courseRest.getCoursesList(courses))
+                                    val courseRes = CourseRest(it)
+                                    insertCourses(courseRes.getCoursesList(courses))
                                 } else {
                                     Log.d(ListCourseFragment.TAG, "No existen cursos")
                                 }
@@ -112,24 +129,24 @@ class ListCourseFragment : Fragment(), ListCourseCallback {
 
             val actives = LoyolaApplication.getInstance()?.repository?.getAllCoursesStatus("activo")
 
-            actives?.forEach{ course ->
-                activity?.let{
-                    if(!course.photo.equals("")) {
-                        downloadPictureCourse(getOutputDirectory(activity as AppCompatActivity).toString(), course.photo, course)
-                    }
-                }
-            }
+//            actives?.forEach{ course ->
+//                activity?.let{
+//                    if(!course.photo.equals("")) {
+//                        downloadPictureCourse(getOutputDirectory(activity as AppCompatActivity).toString(), course.photo, course)
+//                    }
+//                }
+//            }
         }
     }
 
     fun populateCourseList(courses: List<Course>){
-
-        Handler(Looper.getMainLooper()).post {
-            val recycler_adap = AdapterCourse(courses, this  )
-            val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(activity)
-            recycler.setLayoutManager(layoutManager)
-            recycler.setAdapter(recycler_adap)
-        }
+//
+//        Handler(Looper.getMainLooper()).post {
+//            val recycler_adap = AdapterCourse(courses, this  )
+//            val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(activity)
+//            recycler.setLayoutManager(layoutManager)
+//            recycler.setAdapter(recycler_adap)
+//        }
     }
 
     /*************************************************************************************/
@@ -154,7 +171,7 @@ class ListCourseFragment : Fragment(), ListCourseCallback {
                     Log.d(MainActivity.TAG, "URL: " + url_photo)
                     Log.d(MainActivity.TAG, "filename: " + url_photo.substring(url_photo.lastIndexOf("/") + 1))
 
-                    val photo = Util.saveImage(bitmap, output_directory +"/"+ url_photo.substring(url_photo.lastIndexOf("/") + 1));
+                    val photo = Util.saveImage(bitmap, output_directory +"/"+ url_photo.substring(url_photo.lastIndexOf("/") + 1))
                     photo?.let {
                         course.photo = Uri.fromFile(it).toString()
                         backUpdate(course)
