@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.KeyboardShortcutGroup
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -45,7 +46,6 @@ class HomeActivity : AppCompatActivity() {
     companion object {
         private const val TAG = "HomeActivity"
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -74,10 +74,58 @@ class HomeActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        navView.setNavigationItemSelectedListener{ menuItem ->
+            when (menuItem.itemId) {
+                R.id.nav_login -> {
+                    // handle click
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("page", "login")
+                    startActivity(intent)
+                    true
+                }
+                R.id.nav_registrarse -> {
+                    // handle click
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("page", "register")
+                    startActivity(intent)
+                    true
+                }
+                else -> {
+                    navController.navigate(menuItem.itemId)
+                    drawerLayout.close()
+                    true
+                }
+            }
 
+        }
         initializeSdk(this)
 
     }
+
+//    // Inflating the menu items from the menu_items.xml file
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.activity_main_drawer, menu)
+//        return super.onCreateOptionsMenu(menu)
+//    }
+//
+//    // Handling the click events of the menu items
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        // Switching on the item id of the menu item
+//        Log.d(TAG, "-> CARGANDO");
+//        when (item.itemId) {
+//            R.id.nav_registrarse -> {
+//                // Code to be executed when the add button is clicked
+//                Log.d(TAG, "-> REGISTRARSE");
+//                return true
+//            }
+//            R.id.nav_login -> {
+//                // Code to be executed when the add button is clicked
+//                Log.d(TAG, "LOGIN");
+//                return true
+//            }
+//        }
+//        return super.onOptionsItemSelected(item)
+//    }
 
 //    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 //        // Handle item selection
