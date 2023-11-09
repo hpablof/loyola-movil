@@ -74,7 +74,9 @@ class ListCourseFragment : Fragment(), ListCourseCallback {
         super.onViewCreated(view, savedInstanceState)
         GlobalScope.launch {
             val courses = LoyolaApplication.getInstance()?.repository?.getAllCourses()
-            recycler.adapter = AdapterCourse(requireActivity(), courses!!)
+            requireActivity().runOnUiThread {
+                recycler.adapter = AdapterCourse(requireActivity(), courses!!)
+            }
         }
         if( (activity as HomeActivity).isOnline() ) {
             getUpdateData()
