@@ -1,6 +1,7 @@
 package app.wiserkronox.loyolasocios.view.adapter
 
 
+import android.content.Context
 import android.graphics.Bitmap
 import android.net.Uri
 import android.view.LayoutInflater
@@ -16,28 +17,43 @@ import app.wiserkronox.loyolasocios.service.model.Course
 import app.wiserkronox.loyolasocios.view.callback.ListCourseCallback
 
 
-class AdapterCourse internal constructor(private val courseList: List<Course>,val mCallBack: ListCourseCallback) :
-        RecyclerView.Adapter<AdapterCourse.CourseViewHolder>() {
+class AdapterCourse
+    (
+        private val context: Context,
+        private val dataset: List<Course>
+    ):RecyclerView.Adapter<AdapterCourse.CourseViewHolder>() {
+    class CourseViewHolder
+        (itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val number_c: TextView = itemView.findViewById(R.id.curso_number)
+        val name_c: TextView = itemView.findViewById(R.id.text_name_c)
+        val date_s: TextView = itemView.findViewById(R.id.text_date_s)
+        val date_e: TextView = itemView.findViewById(R.id.text_date_e)
+        val expositor: TextView = itemView.findViewById(R.id.text_expositor)
+        val schedule: TextView = itemView.findViewById(R.id.text_horario)
+        val type: TextView = itemView.findViewById(R.id.text_type)
+        val locate: TextView = itemView.findViewById(R.id.text_locate)
+        val url: TextView = itemView.findViewById(R.id.text_url)
+        val code: TextView = itemView.findViewById(R.id.text_code)
+        val password: TextView = itemView.findViewById(R.id.text_password)
+        val cont_locate: LinearLayout = itemView.findViewById(R.id.cont_location)
+        val cont_password: LinearLayout = itemView.findViewById(R.id.cont_password)
+        val cont_codes: LinearLayout = itemView.findViewById(R.id.cont_code)
+        val cont_url: LinearLayout = itemView.findViewById(R.id.cont_url)
+    }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterCourse.CourseViewHolder {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): CourseViewHolder {
         val view: View = LayoutInflater.from(parent.context)
                 .inflate(R.layout.adapter_course, parent, false)
-        return AdapterCourse.CourseViewHolder(view)
+        return CourseViewHolder(view)
     }
 
-    fun setUpImage(holder: AdapterCourse.CourseViewHolder, bmp: Bitmap){
-        holder.photo_course.setImageBitmap(bmp)
-    }
-
-    override fun onBindViewHolder(holder: AdapterCourse.CourseViewHolder, position: Int) {
-        val course = courseList[position]
-        if( !course.photo.startsWith("http") && !course.photo.equals("")) {
-            holder.photo_course.visibility = View.VISIBLE
-            holder.photo_course.setImageURI(Uri.parse(course.photo))
-        } else {
-            holder.photo_course.visibility = View.GONE
-        }
+    override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
+        val course = dataset[position]
+        holder.number_c.text = (position + 1).toString()
         holder.name_c.text = course.name
         holder.date_s.text = course.start_date
         holder.date_e.text = course.end_date
@@ -58,37 +74,10 @@ class AdapterCourse internal constructor(private val courseList: List<Course>,va
             holder.cont_codes.visibility = View.GONE
             holder.cont_url.visibility = View.GONE
         }
-
-        if( !course.document.isEmpty() ) {
-            holder.download_pdf.visibility = Button.VISIBLE
-            holder.download_pdf.setOnClickListener {
-                mCallBack.downloadDocument( courseList[position] )
-            }
-        } else {
-            holder.download_pdf.visibility = Button.GONE
-        }
     }
 
     override fun getItemCount(): Int {
-        return courseList.size
+        return dataset.size
     }
 
-    class CourseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val name_c: TextView = itemView.findViewById(R.id.text_name_c)
-        val photo_course: ImageView = itemView.findViewById(R.id.photo_course)
-        val date_s: TextView = itemView.findViewById(R.id.text_date_s)
-        val date_e: TextView = itemView.findViewById(R.id.text_date_e)
-        val expositor: TextView = itemView.findViewById(R.id.text_expositor)
-        val schedule: TextView = itemView.findViewById(R.id.text_horario)
-        val type: TextView = itemView.findViewById(R.id.text_type)
-        val locate: TextView = itemView.findViewById(R.id.text_locate)
-        val url: TextView = itemView.findViewById(R.id.text_url)
-        val code: TextView = itemView.findViewById(R.id.text_code)
-        val password: TextView = itemView.findViewById(R.id.text_password)
-        val cont_locate: LinearLayout = itemView.findViewById(R.id.cont_location)
-        val cont_password: LinearLayout = itemView.findViewById(R.id.cont_password)
-        val cont_codes: LinearLayout = itemView.findViewById(R.id.cont_code)
-        val cont_url: LinearLayout = itemView.findViewById(R.id.cont_url)
-        val download_pdf: Button = itemView.findViewById(R.id.pdf_curso)
-    }
 }

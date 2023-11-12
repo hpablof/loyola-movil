@@ -101,6 +101,13 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
+        val extras = intent.extras
+        val page = extras?.getString("page")
+
+        if (page == "login")
+            goWithoutSession()
+        if (page == "register")
+            goManualRegister()
         //Si el usario ya esta en sesion entonces no controlamos shared data
 //        val user = LoyolaApplication.getInstance()?.user
 //        if( user != null ){

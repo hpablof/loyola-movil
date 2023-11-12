@@ -25,10 +25,7 @@ class CourseRest (val context: Context){
                 var course = Course()
 
                 if( j_course.has("photo") && !j_course.getString("photo").equals("null"))
-                course.photo = context.getString(R.string.host_service)+
-                        context.getString(R.string.home_aplication)+
-                        context.getString(R.string.dir_photo_course)+
-                        j_course.getLong("id")+"/"+
+                course.photo = context.getString(R.string.host_service)+context.getString(R.string.home_aplication)+ context.getString(R.string.dir_photo_course)+j_course.getLong("id")+"/"+
                         j_course.getString("photo")
 
                 course.id = j_course.getLong("id")
