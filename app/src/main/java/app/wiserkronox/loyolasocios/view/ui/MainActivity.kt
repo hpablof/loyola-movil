@@ -719,11 +719,9 @@ class MainActivity : AppCompatActivity() {
     fun downloadPictures(user: User){
         if( user.picture_1.startsWith("http") ){
             downloadPicture("picture_1", user.picture_1, user)
-            return
         }
         if( user.picture_2.startsWith("http") ){
             downloadPicture("picture_2", user.picture_2, user)
-            return
         }
         if( user.selfie.startsWith("http") ){
             downloadPicture("selfie", user.selfie, user)
