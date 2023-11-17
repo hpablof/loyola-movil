@@ -5,53 +5,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:id="@+id/group_menu" android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_baseline_home_24"
-            android:title="@string/menu_home" />
+            android:title="@string/menu_home"
+            app:showAsAction="ifRoom"/>
         <item
             android:id="@+id/nav_data"
             android:icon="@drawable/ic_perm_identity_24"
-            android:title="@string/menu_datos" />
+            android:title="@string/menu_datos"
+            app:showAsAction="ifRoom"/>
         <item
             android:id="@+id/nav_pictures"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_pictures" />
+            android:title="@string/menu_pictures"
+            app:showAsAction="ifRoom"/>
         <item
             android:id="@+id/nav_certificate"
             android:icon="@drawable/zm_ic_filetype_folder"
             android:title="@string/menu_certificados_aportacion"
-            />
+            app:showAsAction="ifRoom"/>
         <item
             android:id="@+id/nav_credit"
             android:icon="@drawable/ic_selected_circle_indicator"
             android:title="@string/menu_mis_creditos"
-            />
+            app:showAsAction="ifRoom"/>
         <item
             android:id="@+id/nav_assembly"
             android:icon="@drawable/icon_assembly"
-            android:title="@string/menu_assembly" />
+            android:title="@string/menu_assembly"
+            app:showAsAction="ifRoom"/>
         <item
             android:id="@+id/nav_map"
             android:icon="@drawable/zm_mm_pinned_icon"
-            android:title="@string/menu_sucursales" />
+            android:title="@string/menu_sucursales"
+            app:showAsAction="ifRoom"/>
         <item
             android:id="@+id/nav_info"
             android:icon="@drawable/zm_ic_chat_info"
             android:title="@string/menu_more_info"
-            />
+            app:showAsAction="ifRoom"/>
         <item
             android:id="@+id/nav_registrarse"
             android:icon="@drawable/zm_app_user_default"
             android:title="@string/menu_registrarse"
-            app:showAsAction="never"
-            />
+            app:showAsAction="ifRoom" />
         <item
             android:id="@+id/nav_login"
             android:icon="@drawable/ic_login_sso"
             android:title="@string/menu_inicial_session"
-            app:showAsAction="never"
+            app:showAsAction="ifRoom"
+            />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/menu_cerrar_session"
+            app:showAsAction="ifRoom"
             />
     </group>
 </menu>
