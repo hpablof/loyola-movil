@@ -14,6 +14,8 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -26,13 +28,17 @@ import app.wiserkronox.loyolasocios.service.LoyolaApplication
 import app.wiserkronox.loyolasocios.service.model.Course
 import app.wiserkronox.loyolasocios.service.model.User
 import app.wiserkronox.loyolasocios.service.repository.LoyolaService
+import app.wiserkronox.loyolasocios.service.repository.UserRest
 import com.android.volley.*
 import com.android.volley.toolbox.HttpHeaderParser
+import com.android.volley.toolbox.JsonObjectRequest
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.material.internal.NavigationMenuItemView
 import com.google.android.material.navigation.NavigationView
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -42,6 +48,7 @@ class HomeActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
+    private lateinit var navView: NavigationView
 
     companion object {
         private const val TAG = "HomeActivity"
@@ -53,7 +60,7 @@ class HomeActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-        val navView: NavigationView = findViewById(R.id.nav_view)
+        navView = findViewById(R.id.nav_view)
 
         navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
@@ -83,6 +90,10 @@ class HomeActivity : AppCompatActivity() {
                     startActivity(intent)
                     true
                 }
+                R.id.nav_logout -> {
+                    closeSession()
+                    true
+                }
                 R.id.nav_registrarse -> {
                     // handle click
                     val intent = Intent(this, MainActivity::class.java)
@@ -98,16 +109,123 @@ class HomeActivity : AppCompatActivity() {
             }
 
         }
+        hideOnSession(navView.menu)
+
         initializeSdk(this)
 
     }
 
+
+    override fun onResume() {
+        super.onResume()
+
+        val sharedPref = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE) ?: return
+        val email = sharedPref.getString("email", "")?:""
+        val password = sharedPref.getString("password", "")?:""
+
+        if( !email.equals("") && !password.equals("")){
+            getUserByEmailPassword(email, password)
+        }
+    }
+
+    fun hideOnSession(menu: Menu) {
+        val sharedPref = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE) ?: return
+        val email = sharedPref.getString("email", "")?:""
+        val password = sharedPref.getString("password", "")?:""
+        if( !email.equals("") && !password.equals("")){
+            menu.findItem(R.id.nav_data).isVisible = true;
+            menu.findItem(R.id.nav_pictures).isVisible = true;
+            menu.findItem(R.id.nav_certificate).isVisible = true;
+            menu.findItem(R.id.nav_credit).isVisible = true;
+            menu.findItem(R.id.nav_assembly).isVisible = true;
+            menu.findItem(R.id.nav_registrarse).isVisible = false;
+            menu.findItem(R.id.nav_login).isVisible = false;
+            menu.findItem(R.id.nav_logout).isVisible = true;
+        } else {
+            menu.findItem(R.id.nav_data).isVisible = false;
+            menu.findItem(R.id.nav_pictures).isVisible = false;
+            menu.findItem(R.id.nav_certificate).isVisible = false;
+            menu.findItem(R.id.nav_credit).isVisible = false;
+            menu.findItem(R.id.nav_assembly).isVisible = false;
+            menu.findItem(R.id.nav_registrarse).isVisible = true;
+            menu.findItem(R.id.nav_login).isVisible = true;
+            menu.findItem(R.id.nav_logout).isVisible = false;
+        }
+    }
+
+    fun getUserByEmailPassword(email: String, password: String){
+        GlobalScope.launch {
+            val user = LoyolaApplication.getInstance()?.repository?.getUserEmailPassword(email, password)
+            if( user != null ) {
+                LoyolaApplication.getInstance()?.user = user
+                val sharedPreferences = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE)
+                with(sharedPreferences.edit()){
+                    putString("email", user.email)
+                    putString("password", user.password)
+                    commit()
+                }
+            } else {
+                if( isOnline() ) {
+                    Log.d(MainActivity.TAG, "no hay usuario buscando en el servidor")
+                    getUserFromServer(email, password, "", null)
+                } else {
+                    showMessage("Si ya esta registrado, debe estar conectado a Internet para buscar su información")
+                }
+            }
+        }
+    }
+    fun getUserFromServer(email: String, password: String, oauth_uid: String, account: GoogleSignInAccount?){
+        val userRest = UserRest(this)
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.POST, userRest.getUserLoginURL(),
+            userRest.getUserDataLoginJson( email, password, oauth_uid),
+            { response ->
+                Log.d(MainActivity.TAG, "Response is: $response")
+                if (response.getBoolean("success")) {
+                    Log.d(MainActivity.TAG, "Exito")
+                    userRest.getUserFromJSON( response.getJSONObject("user"))?.let {
+                        updateByDataJSON(email, oauth_uid, it )
+                    }?: run {
+                        showMessage("No se pudo descargar los datos del socio del servidor")
+                    }
+                }
+            },
+            { error ->
+                Log.e(MainActivity.TAG, error.toString())
+                Log.e(MainActivity.TAG, userRest.getUserLoginURL())
+                Log.e(MainActivity.TAG, error.message.toString())
+                error.printStackTrace()
+                showMessage("Error de conexión con el servidor")
+            }
+        )
+
+        // Add the request to the RequestQueue.
+        LoyolaService.getInstance(this).addToRequestQueue(jsonObjectRequest)
+
+    }
+    fun updateByDataJSON(email: String, oauth_uid: String, userServer: User) {
+
+        GlobalScope.launch {
+            LoyolaApplication.getInstance()?.user = userServer
+            LoyolaApplication.getInstance()?.repository?.insert(userServer)
+        }
+    }
+
 //    // Inflating the menu items from the menu_items.xml file
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
 //        menuInflater.inflate(R.menu.activity_main_drawer, menu)
-//        return super.onCreateOptionsMenu(menu)
-//    }
+////    val sharedPref = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE)
+////    val email = sharedPref.getString("email", "")?:""
+////    val password = sharedPref.getString("password", "")?:""
 //
+////    if( !email.equals("") && !password.equals("")){
+//    findViewById<NavigationMenuItemView>(R.id.nav_data).isVisible = false;
+////            findViewById<NavigationMenuItemView>(R.id.nav_pictures).isGone = true;
+////            findViewById<NavigationMenuItemView>(R.id.nav_certificate).isGone = true;
+//        Toast.makeText(this, "Nav ", Toast.LENGTH_SHORT).show()
+//        return true;
+//    }
+
 //    // Handling the click events of the menu items
 //    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 //        // Switching on the item id of the menu item
@@ -161,9 +279,11 @@ class HomeActivity : AppCompatActivity() {
 
             LoyolaApplication.getInstance()?.user = null
 
-            val intent = Intent(this@HomeActivity, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+            hideOnSession(navView.menu);
+            goHome()
+//            val intent = Intent(this@HomeActivity, MainActivity::class.java)
+//            startActivity(intent)
+//            finish()
         }
 
     }

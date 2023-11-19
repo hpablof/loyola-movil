@@ -10,10 +10,12 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
@@ -42,6 +44,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
+import com.google.android.material.internal.NavigationMenuItemView
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import org.json.JSONException
@@ -109,29 +112,27 @@ class MainActivity : AppCompatActivity() {
         if (page == "register")
             goManualRegister()
         //Si el usario ya esta en sesion entonces no controlamos shared data
-//        val user = LoyolaApplication.getInstance()?.user
-//        if( user != null ){
-//            defineDestination(user)
-//            return
-//        }
+        val user = LoyolaApplication.getInstance()?.user
+        if( user != null ){
+            defineDestination(user)
+        }
 
 //        Log.d(TAG, "onResume")
 //        //Verificamos que no tenga informacion guardada para el inicio de sesion
-//        val sharedPref = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE) ?: return
-//        val email = sharedPref.getString("email", "")?:""
-//        val password = sharedPref.getString("password", "")?:""
-//
+        val sharedPref = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE) ?: return
+        val email = sharedPref.getString("email", "")?:""
+        val password = sharedPref.getString("password", "")?:""
+
 //        val oauth_uid = sharedPref.getString("oauth_uid", "")?:""
 //        if( !oauth_uid.equals("")){
 //            getGoogleStatus()
 //            return
 //        }
-//
-//        if( !email.equals("") && !password.equals("")){
-//            getUserByEmailPassword(email, password)
-//            return
-//        }
-//
+
+        if( !email.equals("") && !password.equals("")){
+            getUserByEmailPassword(email, password)
+        }
+
 //        if( !google_request ) {
 //            Log.d(TAG, "NO es request de google")
 //            goWithoutSession()
@@ -553,13 +554,15 @@ class MainActivity : AppCompatActivity() {
     fun getUserFromServer(email: String, password: String, oauth_uid: String, account: GoogleSignInAccount?){
         val userRest = UserRest(this)
         val jsonObjectRequest = JsonObjectRequest(
-                Request.Method.POST, userRest.getUserLoginURL(),
+                Request.Method.POST,
+                userRest.getUserLoginURL(),
                 userRest.getUserDataLoginJson( email, password, oauth_uid),
                 { response ->
                     Log.d(TAG, "Response is: $response")
                     if (response.getBoolean("success")) {
                         Log.d(TAG, "Exito")
-                        userRest.getUserFromJSON( response.getJSONObject("user"))?.let {
+                        userRest.getUserFromJSON(
+                            response.getJSONObject("user"))?.let {
                             updateByDataJSON(email, oauth_uid, it )
                         }?: run {
                             showMessage("No se pudo descargar los datos del socio del servidor")
@@ -719,11 +722,9 @@ class MainActivity : AppCompatActivity() {
     fun downloadPictures(user: User){
         if( user.picture_1.startsWith("http") ){
             downloadPicture("picture_1", user.picture_1, user)
-            return
         }
         if( user.picture_2.startsWith("http") ){
             downloadPicture("picture_2", user.picture_2, user)
-            return
         }
         if( user.selfie.startsWith("http") ){
             downloadPicture("selfie", user.selfie, user)
