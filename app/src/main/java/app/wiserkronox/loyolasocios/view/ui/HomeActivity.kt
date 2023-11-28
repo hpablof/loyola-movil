@@ -8,14 +8,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import android.view.KeyboardShortcutGroup
 import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.isGone
-import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -33,12 +29,6 @@ import com.android.volley.*
 import com.android.volley.toolbox.HttpHeaderParser
 import com.android.volley.toolbox.JsonObjectRequest
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
-import com.google.android.material.internal.NavigationMenuItemView
 import com.google.android.material.navigation.NavigationView
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -111,8 +101,6 @@ class HomeActivity : AppCompatActivity() {
         }
         hideOnSession(navView.menu)
 
-        initializeSdk(this)
-
     }
 
 
@@ -133,23 +121,23 @@ class HomeActivity : AppCompatActivity() {
         val email = sharedPref.getString("email", "")?:""
         val password = sharedPref.getString("password", "")?:""
         if( !email.equals("") && !password.equals("")){
-            menu.findItem(R.id.nav_data).isVisible = true;
-            menu.findItem(R.id.nav_pictures).isVisible = true;
-            menu.findItem(R.id.nav_certificate).isVisible = true;
-            menu.findItem(R.id.nav_credit).isVisible = true;
-            menu.findItem(R.id.nav_assembly).isVisible = true;
-            menu.findItem(R.id.nav_registrarse).isVisible = false;
-            menu.findItem(R.id.nav_login).isVisible = false;
-            menu.findItem(R.id.nav_logout).isVisible = true;
+            menu.findItem(R.id.nav_data).isVisible = true
+            menu.findItem(R.id.nav_pictures).isVisible = true
+            menu.findItem(R.id.nav_certificate).isVisible = true
+            menu.findItem(R.id.nav_credit).isVisible = true
+            menu.findItem(R.id.nav_assembly).isVisible = true
+            menu.findItem(R.id.nav_registrarse).isVisible = false
+            menu.findItem(R.id.nav_login).isVisible = false
+            menu.findItem(R.id.nav_logout).isVisible = true
         } else {
-            menu.findItem(R.id.nav_data).isVisible = false;
-            menu.findItem(R.id.nav_pictures).isVisible = false;
-            menu.findItem(R.id.nav_certificate).isVisible = false;
-            menu.findItem(R.id.nav_credit).isVisible = false;
-            menu.findItem(R.id.nav_assembly).isVisible = false;
-            menu.findItem(R.id.nav_registrarse).isVisible = true;
-            menu.findItem(R.id.nav_login).isVisible = true;
-            menu.findItem(R.id.nav_logout).isVisible = false;
+            menu.findItem(R.id.nav_data).isVisible = false
+            menu.findItem(R.id.nav_pictures).isVisible = false
+            menu.findItem(R.id.nav_certificate).isVisible = false
+            menu.findItem(R.id.nav_credit).isVisible = false
+            menu.findItem(R.id.nav_assembly).isVisible = false
+            menu.findItem(R.id.nav_registrarse).isVisible = true
+            menu.findItem(R.id.nav_login).isVisible = true
+            menu.findItem(R.id.nav_logout).isVisible = false
         }
     }
 
@@ -279,7 +267,7 @@ class HomeActivity : AppCompatActivity() {
 
             LoyolaApplication.getInstance()?.user = null
 
-            hideOnSession(navView.menu);
+            hideOnSession(navView.menu)
             goHome()
 //            val intent = Intent(this@HomeActivity, MainActivity::class.java)
 //            startActivity(intent)
@@ -314,29 +302,29 @@ class HomeActivity : AppCompatActivity() {
     }
 
     fun goCertificate( ){
-        navController.navigate(R.id.nav_certificate, null, null);
+        navController.navigate(R.id.nav_certificate, null, null)
     }
     fun goCredit( ){
-        navController.navigate(R.id.nav_credit, null, null);
+        navController.navigate(R.id.nav_credit, null, null)
     }
     fun goCourse( ){
-        navController.navigate(R.id.nav_course, null, null);
+        navController.navigate(R.id.nav_course, null, null)
     }
 
     fun goMaps(){
-        navController.navigate(R.id.nav_map, null, null);
+        navController.navigate(R.id.nav_map, null, null)
     }
     fun goAhorraConNosostros() {
-        navController.navigate(R.id.nav_ahorra_con_nosotros, null, null);
+        navController.navigate(R.id.nav_ahorra_con_nosotros, null, null)
     }
     fun goElijeCredito() {
-        navController.navigate(R.id.nav_elije_credito, null, null);
+        navController.navigate(R.id.nav_elije_credito, null, null)
     }
     fun goPuntoReclamo() {
-        navController.navigate(R.id.nav_punto_reclamo, null, null);
+        navController.navigate(R.id.nav_punto_reclamo, null, null)
     }
     fun goRecomendacionesSeguridad() {
-        navController.navigate(R.id.nav_recomendaciones_seguridad, null, null);
+        navController.navigate(R.id.nav_recomendaciones_seguridad, null, null)
     }
 
     /*********************************************************************************************
